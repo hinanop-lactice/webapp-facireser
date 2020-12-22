@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+<button type="button" class="btn btn-primary">Primary</button>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
