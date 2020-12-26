@@ -1,3 +1,17 @@
+@extends('layouts.app')
+
+ @section('content')
+  @foreach($errors->all() as $message)
+  <div>{{ $message }}</div>
+  @endforeach
+
+  @if(Session::has('message'))
+  <div>{{ Session::get('message') }}</div>
+  @endif
+
+  <form method="POST" action="http://localhost:8000/organizations">
+    @csrf
+
 登録団体
 ・硬式野球部
 ・軟式野球部

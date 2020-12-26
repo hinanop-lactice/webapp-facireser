@@ -1,10 +1,19 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
+@extends('layouts.app')
+
+ @section('content')
+  @foreach($errors->all() as $message)
+  <div>{{ $message }}</div>
+  @endforeach
+
+  @if(Session::has('message'))
+  <div>{{ Session::get('message') }}</div>
+  @endif
+
+  <form method="POST" action="http://localhost:8000/faciliyies">
+    @csrf
+
     <title>利用可能施設一覧</title>
   </head>
-  <body>
   <form>
   <h1>利用可能施設一覧</h1>
   </form>
@@ -12,7 +21,7 @@
    <li>第一体育館</li>
    <li>第二体育館</li>
    <li>野球場</li>
-   <li>サッカー・ラグビー場</li>
+   <li>サッカー・ラグビー
    <li>陸上競技場</li>
    <li>第一テニスコート</li>
    <li>第二テニスコート</li>
