@@ -99,5 +99,26 @@ return [
             'expire' => 60,
         ],
     ],
-
+//Admin(管理者)の認証機能
+'guards' => [
+            'admin' => [
+                'driver' => 'session',
+                'provider' => 'admin',
+            ],
+    ],
+    
+    'providers' => [
+            'admin' => [
+                'driver' => 'eloquent',
+                'model' => App\Admin::class,　
+            ],
+    ],       
+    
+    'passwords' => [
+            'admin' => [
+                'provider' => 'admin',
+                'table' => 'password_resets',
+                'expire' => 60,
+            ],
+    ],
 ];

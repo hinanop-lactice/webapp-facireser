@@ -4,6 +4,10 @@
 <div class="container">
 <button type="button" class="btn btn-primary">Primary</button>
     <div class="row justify-content-center">
+
+    <!-- left menu -->
+    @include('menu')
+
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>

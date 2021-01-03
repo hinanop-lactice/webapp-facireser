@@ -15,8 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['middleware' => 'auth:admin'], function () {
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/facilities', 'Facilitycontroller@index')->name('facilities');
 Route::get('/organizations', 'Organizationcontroller@index')->name('organization');
+Route::get('/facilities/{id}', 'FacilityController@show');
